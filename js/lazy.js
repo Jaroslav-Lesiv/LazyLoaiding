@@ -5,7 +5,6 @@ const LazyLoad = class {
   constructor({ images }) {
     this.images = images
     
-    console.log(this.images)
     window.addEventListener('scroll', () => this.checkPosition())
   }
 
