@@ -3,7 +3,7 @@ const loadImages = document.querySelectorAll('.lazy-load') || []
 
 const LazyLoad = class {
   constructor({ images }) {
-    this.images = images
+    this.images = [...images]
     
     window.addEventListener('scroll', () => this.checkPosition())
   }
@@ -27,7 +27,7 @@ const LazyLoad = class {
   showImage(elem) {
     const _src = elem.getAttribute('realsrc')
     elem.src = _src
-    this.images = Array.prototype.slice.call(this.images).filter( image => image !== elem )
+    this.images =  this.images.filter( image => image !== elem )
   }
 }
 
